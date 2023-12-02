@@ -142,35 +142,135 @@ option {
 .user-button-delete:hover {
     background-color: #c82333;
 }
-
-.user-table {
+section {
     width: 100%;
-    border-collapse: collapse;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    padding-bottom: 32px;
+    margin-top: 32px;
+}
+
+.container:before {
+    content: '';
+    position: absolute;
+    height: 32px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(-45deg, transparent 16px, white 0),
+        linear-gradient(45deg, transparent 16px, white 0);
+    background-size: 22px 32px;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    background-color: #333;
+    font-size: 14px;
+}
+
+thead th {
+    color: white;
+    text-align: left;
+    background-color: #333;
+}
+
+thead th,
+tbody td {
+    padding: 14px;
+    border: 0;
+    border-bottom: 1px solid #E7E7E7;
+}
+
+tbody td:first-child {
+    border-left: 4px solid transparent;
+    transition: all ease 0.3s;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+tbody tr:hover {
+    background-color: #272323;
+}
+
+tbody tr:hover td:first-child {
+    border-left-color: #0F6FDE;
+}
+
+td.status {
     text-align: center;
 }
 
-.user-table-header {
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 0.8rem 0;
-    border-bottom: 2px solid #dee2e6;
-    position: sticky;
-    top: 0;
-    z-index: 1;
+td.status span {
+    font-size: 12px;
+    border-radius: 3px;
+    padding: 4px 8px;
 }
 
-.user-table td {
-    padding: 0.8rem 0;
-    border-bottom: 1px solid #dee2e6;
-    border-right: 1px solid #dee2e6;
+td.status span.approved {
+    color: #FFFFFF;
+    background-color: #00C455;
 }
 
-.user-table td:last-child {
-    border-right: none;
+td.status span.decline {
+    color: #FFFFFF;
+    background-color: #F13426;
 }
 
-.user-table td:last-child {
-    border-right: none;
+td.status span.pending {
+    color: #132D4A;
+    background-color: #EBF0F5;
+}
+
+#toggleView:checked~table thead {
+    display: none;
+}
+
+#toggleView:checked~table tbody {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4px;
+}
+
+#toggleView:checked~table tbody tr,
+#toggleView:checked~table tbody td {
+    display: block;
+    border: 0;
+}
+
+#toggleView:checked~table tbody td {
+    padding: 4px;
+    font-weight: bold;
+}
+
+#toggleView:checked~table tbody td:before {
+    content: attr(data-name);
+    width: 100px;
+    display: inline-block;
+    text-transform: capitalize;
+    font-weight: normal;
+}
+
+#toggleView:checked~table tbody td.status {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+
+#toggleView:checked~table tbody tr {
+    position: relative;
+    width: calc(50% - 8px);
+    border: 1px solid #E7E7E7;
+    padding: 8px;
+    margin: 4px;
 }
 
 .form-modal {

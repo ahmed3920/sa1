@@ -102,6 +102,10 @@ function DashBoard() {
                 <option value="3">Employees</option>
               </select>
             </div>
+            <section>
+            <div class="container">
+            <input type="checkbox" name="" id="toggleView"/>
+            <label for="toggleView"> Grid View </label>
             <table className="user-table">
               <thead>
                 <tr>
@@ -122,14 +126,15 @@ function DashBoard() {
                   })
                   .map((data) => (
                     <tr key={data.user_id}>
-                      <td>{data.Name}</td>
-                      <td>{data.Email}</td>
+                      <td data-name="Name">{data.Name}</td>
+                      <td data-name="Email">{data.Email}</td>
                       
-                      <td>{data.Phone}</td>
-                      <td style={{ backgroundColor: data.Status === 1 ? "#28a745" : "#dc3545" }}>
+                      <td data-name="Phone">{data.Phone}</td>
+                      <td data-name="Status" style={{ backgroundColor: data.Status === 1 ? "#28a745" : "#dc3545" }}>
                         {data.Status === 1 ? "Active" : "Inactive"}
                       </td>
                       <td
+                      data-name="Type"
                         style={{
                           backgroundColor: getTypeBackgroundColor(data.Type),
                           color: "#FFFFFF",
@@ -137,9 +142,9 @@ function DashBoard() {
                       >
                         { data.Type === 2 ? "TeamLeader" : "Employee"}
                       </td>
-                      <td>{data.NameOfTeam}</td>
+                      <td data-name="NameOfTeam">{data.NameOfTeam}</td>
                       
-                      <td>
+                      <td data-name="Action">
                         <button
                           className="user-button user-button-update"
                           onClick={() => setSelectedUser(data)}
@@ -162,6 +167,8 @@ function DashBoard() {
                   ))}
               </tbody>
             </table>
+            </div>
+            </section>
           </div>
           
       {showForm && <Addform handleAddUser={handleAddUser} onClose={handleClose} />}
