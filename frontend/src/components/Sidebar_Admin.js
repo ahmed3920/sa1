@@ -135,7 +135,7 @@ const Sidebar_Admin = ({ logo, name, children, openOnHover }) => {
 					<span className='logo_name'>{ name }</span>
 				</section>
 				<ul className='nav-links'>
-					<Links links={links} />
+					
 					<li>
 						<div className="profile-details">
 							<div className="name-job">

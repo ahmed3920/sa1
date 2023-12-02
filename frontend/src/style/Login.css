@@ -3,15 +3,50 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to bottom right, #005aa7, #66a6ff);
+        background: linear-gradient(0deg, rgba(0, 13, 60, 1) 100%, rgba(136, 203, 171, 1) 0%);
+            font-family: 'Kumbh Sans', sans-serif;
 }
 
+   .myTransition {
+       animation: transitionIn 1s;
+   }
+
+   @keyframes transitionIn {
+       from {
+           opacity: 0;
+           transform: translateY(-60px);
+       }
+
+       to {
+           opacity: 1;
+           transform: translateY(0);
+       }
+   }
+   @keyframes transitionLeft {
+       from {
+           opacity: 0;
+           transform: translateX(-300px);
+       }
+
+       to {
+           opacity: 1;
+           transform: translateX(0);
+       }
+   }
+   .myTransitionLeft {
+       animation: transitionLeft 1s;
+   }
 .loginContiner {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    padding: 1rem 2rem 2rem 2rem;
     width: 400px;
+        padding: 30px;
+        margin-bottom: 35px;
+        position: absolute;
+        top: 24%;
+        left: 40%;
+        background-color: #333;
+        text-align: center;
+        border-radius: 1rem;
+        color: rgb(255, 255, 255);
 }
 
 .loginForm {
@@ -28,13 +63,23 @@
 
 .loginForm input[type='email'],
 .loginForm input[type='password'] {
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    font-size: 1.2rem;
-    padding: 0.5rem;
+    border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid rgb(175, 10, 10);
+        padding: 20px;
+        width: 200px;
+        outline: none;
+        color: rgb(255, 255, 255);
+        border-radius: 2rem;
 }
-
+.loginForm input[type='email']:focus,
+.loginForm input[type='password']:focus{
+    width: 280px;
+        border-color: rgb(235, 59, 15);
+}
 .loginForm label svg {
     width: 20px;
     height: 17px;
@@ -49,17 +94,27 @@
 }
 
 .btn-success {
-    background-color: #007bff;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease-in-out;
-    text-decoration: none;
+    border: 0;
+        background: none;
+        display: block;
+        width: 150px;
+        margin: 10px auto;
+        text-align: center;
+        padding: 20px 10px;
+        outline: none;
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        border-radius: 2rem;
+        transition: 0.5s;
+        cursor: pointer;
+        float: right;
+        font-family: 'Kumbh Sans', sans-serif;
 }
 
 .btn-success:hover {
-    background-color: #0062cc;
+        color: rgb(255, 255, 255);
+            background-color: #fe4f18;
+            box-shadow: 0 0 10px #fe4f18, 0 0 40px #fe4f18, 0 0 80px #fe4f18;
 }
 
 .btn-default {

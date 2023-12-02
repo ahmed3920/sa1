@@ -4,7 +4,8 @@
     align-items: center;
     margin-left: 500;
     min-height: 100vh;
-    background: linear-gradient(to bottom right, #005aa7, #66a6ff) no-repeat fixed center;
+        background: linear-gradient(0deg, rgba(0, 13, 60, 1) 100%, rgba(136, 203, 171, 1) 0%);
+            font-family: 'Kumbh Sans', sans-serif;
     background-size: cover;
 
 }
@@ -16,7 +17,8 @@
     align-items: center;
     width: calc(100% - 220px);
     max-width: 1200px;
-    background-color: #fff;
+    background-color: #333;
+    color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     padding: 2rem;
@@ -154,7 +156,6 @@ option {
     border-bottom: 2px solid #dee2e6;
     position: sticky;
     top: 0;
-    background-color: #fff;
     z-index: 1;
 }
 
@@ -186,8 +187,9 @@ option {
 }
 
 .form-modal-content {
-    background-color: #FFFFFF;
+    background-color: #333;
     border-radius: 5px;
+    color: #c1971f;
     padding: 20px;
     width: 400px;
 }

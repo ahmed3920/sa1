@@ -79,11 +79,12 @@ function Login() {
   }
 
   return (
+    
     <div className='loginClass'>
-      <div className='loginContiner'>
-      <h2 className='FormName'>Log-in</h2>
-        <form action="" onSubmit={handle}>
-          <div className='loginForm'>
+      <div className='loginContiner myTransitionLeft'>
+      <h1 className='FormName'>Log-in</h1>
+        <form className="" action="" onSubmit={handle}>
+          <div className='loginForm '>
             <label htmlFor='email'><FaEnvelope />Email</label>
             <input type='email' placeholder='Enter Email'  onChange={handleInput} name='email' />
           {errors.email &&<span className="text-danger"> {errors.email}</span>}
