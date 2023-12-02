@@ -82,7 +82,7 @@ function DashBoard() {
       <Sidebar_Admin logo={<i className="bx bxs-school"></i>} name="FCIH " openOnHover={false}></Sidebar_Admin>
       <div className="page-container">
         <div className="user-container">
-          <div className="user-header">
+          <div className="user-header myTransition">
             <div className="add-container">
             <button className="user-button add-button" onClick={GoTo}>
                 Member_Skills +
